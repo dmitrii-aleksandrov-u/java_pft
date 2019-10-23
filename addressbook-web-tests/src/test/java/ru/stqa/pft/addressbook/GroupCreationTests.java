@@ -1,4 +1,4 @@
-package com.example.tests;
+package ru.stqa.pft.addressbook;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -8,7 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class GroupCreationTest {
+public class GroupCreationTests {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -22,11 +22,11 @@ public class GroupCreationTest {
   }
 
   @Test
-  public void testUntitledTestCase() throws Exception {
-    driver.get("http://localhost/addressbook/group.php");
+  public void testGroupCreationTests() throws Exception {
+    driver.get("http://localhost/addressbook/");
+    driver.findElement(By.name("user")).click();
     driver.findElement(By.name("user")).clear();
     driver.findElement(By.name("user")).sendKeys("admin");
-    driver.findElement(By.name("pass")).click();
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]")).click();
